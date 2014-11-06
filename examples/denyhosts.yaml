@@ -1,0 +1,16 @@
+---
+denyhosts::config_file_template: "denyhosts/common/etc/denyhosts.conf.erb"
+denyhosts::config_file_hash:
+  'denyhosts':
+    config_file_path:     '/var/lib/denyhosts/allowed-hosts'
+    config_file_mode:     '0644'
+    config_file_template: 'denyhosts/common/var/lib/denyhosts/allowed-hosts.erb'
+denyhosts::email: "admin@%{::domain}"
+denyhosts::email_from: "root@%{::fqdn}"
+denyhosts::email_subject: '[denyhosts] Report from %{::fqdn}'
+denyhosts::deny_threshold_invalid: 5
+denyhosts::deny_threshold_invalid: 10
+denyhosts::purge_deny: '1w'
+denyhosts::whitelist:
+  - '127.0.0.1'
+  - '192.168.178.*'
