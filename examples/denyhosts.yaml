@@ -1,5 +1,5 @@
 ---
-denyhosts::config_file_template: "denyhosts/common/etc/denyhosts.conf.erb"
+denyhosts::config_file_template: 'denyhosts/common/etc/denyhosts.conf.erb'
 denyhosts::config_file_hash:
   'denyhosts':
     config_file_path:     '/var/lib/denyhosts/allowed-hosts'
