@@ -84,7 +84,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, :expect_failures => true)
       end
 
       describe package(package_name) do
