@@ -4,6 +4,6 @@
 #
 
 # Allowed hosts
-<% @whitelist.each do |value| -%>
+<% scope.lookupvar('::denyhosts::whitelist').each do |value| -%>
 <%= value %>
 <% end -%>
