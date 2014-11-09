@@ -202,7 +202,7 @@ HOSTNAME_LOOKUP=YES
 #LOCK_FILE = /var/lock/subsys/denyhosts
 #
 # Debian
-<% if scope.lookupvar('::lsbdistcodename') == 'squeeze' -%>
+<% if @lsbdistcodename == 'squeeze' -%>
 LOCK_FILE = /var/run/denyhosts.pid
 <% else -%>
 LOCK_FILE = /run/denyhosts.pid
