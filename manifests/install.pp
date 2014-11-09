@@ -9,6 +9,6 @@ class denyhosts::install {
   }
 
   if $denyhosts::package_list {
-    ensure_resource('package', $denyhosts::package_list, { 'ensure' => denyhosts::package_ensure })
+    ensure_resource('package', $denyhosts::package_list, { 'ensure' => $denyhosts::package_ensure })
   }
 }
