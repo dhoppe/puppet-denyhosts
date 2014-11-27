@@ -52,7 +52,7 @@ Install denyhosts with the recommended parameters.
     class { 'denyhosts':
       config_file_template => 'denyhosts/common/etc/denyhosts.conf.erb',
       config_file_hash     => {
-        'allowed-hosts'    => {
+        'allowed-hosts' => {
           config_file_path     => '/var/lib/denyhosts/allowed-hosts',
           config_file_mode     => '0644',
           config_file_template => 'denyhosts/common/var/lib/denyhosts/allowed-hosts.erb',
