@@ -278,15 +278,15 @@ Determines if the service should be enabled at boot. Valid values are 'true' and
 
 #### `email`
 
-Determines which email address (recipient) should be notified about restricted hosts and suspicious logins. Defaults to 'denyhosts@${::domain}'.
+Determines which email address (recipient) should be notified about restricted hosts and suspicious logins. Defaults to "denyhosts@${::domain}".
 
 #### `email_from`
 
-Determines which email address (sender) should be used. Defaults to 'root@${::fqdn}'.
+Determines which email address (sender) should be used. Defaults to "root@${::fqdn}".
 
 #### `email_subject`
 
-Determines which email subject should be used. Defaults to '[denyhosts] Report from ${::fqdn}'.
+Determines which email subject should be used. Defaults to "[denyhosts] Report from ${::fqdn}".
 
 #### `deny_threshold_invalid`
 
