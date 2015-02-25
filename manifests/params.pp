@@ -43,7 +43,9 @@ class denyhosts::params {
 
   case $::osfamily {
     'Debian': {
-      if getvar('::lsbdistcodename') == 'trusty' {
+      if getvar('::lsbdistcodename') == 'jessie' {
+        fail("${::lsbdistid} ${::lsbdistrelease} not supported.")
+      } elsif getvar('::lsbdistcodename') == 'trusty' {
         fail("${::lsbdistid} ${::lsbdistrelease} not supported.")
       }
     }
