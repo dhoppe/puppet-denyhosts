@@ -16,12 +16,12 @@ describe 'denyhosts::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_denyhosts.conf').with({
+          is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/denyhosts/common/etc/denyhosts.conf',
             'notify'  => 'Service[denyhosts]',
             'require' => 'Package[denyhosts]',
-          })
+          )
         end
       end
 
@@ -32,12 +32,12 @@ describe 'denyhosts::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_denyhosts.conf').with({
+          is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[denyhosts]',
             'require' => 'Package[denyhosts]',
-          })
+          )
         end
       end
 
@@ -48,12 +48,12 @@ describe 'denyhosts::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_denyhosts.conf').with({
+          is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[denyhosts]',
             'require' => 'Package[denyhosts]',
-          })
+          )
         end
       end
 
@@ -67,12 +67,12 @@ describe 'denyhosts::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_denyhosts.conf').with({
+          is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[denyhosts]',
             'require' => 'Package[denyhosts]',
-          })
+          )
         end
       end
     end

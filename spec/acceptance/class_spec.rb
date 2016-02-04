@@ -3,7 +3,6 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'denyhosts'
-  config_dir_path  = '/etc'
   config_file_path = '/etc/denyhosts.conf'
   service_name     = 'denyhosts'
 end
