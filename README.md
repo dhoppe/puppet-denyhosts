@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-denyhosts.png?branch=master)](https://travis-ci.org/dhoppe/puppet-denyhosts)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
+[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
+[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
 
 #### Table of Contents
 
