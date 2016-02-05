@@ -18,9 +18,9 @@ describe 'denyhosts', :type => :class do
       describe 'denyhosts::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('denyhosts').with({
+            is_expected.to contain_package('denyhosts').with(
               'ensure' => 'present',
-            })
+            )
           end
         end
 
@@ -30,9 +30,9 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('denyhosts').with({
+            is_expected.to contain_package('denyhosts').with(
               'ensure' => 'latest',
-            })
+            )
           end
         end
 
@@ -44,22 +44,22 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('denyhosts').with({
+            is_expected.to contain_package('denyhosts').with(
               'ensure' => 'absent',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
           it do
-            is_expected.to contain_service('denyhosts').with({
+            is_expected.to contain_service('denyhosts').with(
               'ensure' => 'stopped',
               'enable' => false,
-            })
+            )
           end
         end
 
@@ -71,22 +71,22 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('denyhosts').with({
+            is_expected.to contain_package('denyhosts').with(
               'ensure' => 'purged',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'absent',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
           it do
-            is_expected.to contain_service('denyhosts').with({
+            is_expected.to contain_service('denyhosts').with(
               'ensure' => 'stopped',
               'enable' => false,
-            })
+            )
           end
         end
       end
@@ -94,11 +94,11 @@ describe 'denyhosts', :type => :class do
       describe 'denyhosts::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -108,7 +108,7 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.dir').with({
+            is_expected.to contain_file('denyhosts.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
@@ -116,7 +116,7 @@ describe 'denyhosts', :type => :class do
               'source'  => 'puppet:///modules/denyhosts/common/etc',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -127,7 +127,7 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.dir').with({
+            is_expected.to contain_file('denyhosts.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
@@ -135,7 +135,7 @@ describe 'denyhosts', :type => :class do
               'source'  => 'puppet:///modules/denyhosts/common/etc',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -145,12 +145,12 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/denyhosts/common/etc/denyhosts.conf',
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -160,12 +160,12 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -175,12 +175,12 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
 
@@ -193,12 +193,12 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('denyhosts.conf').with({
+            is_expected.to contain_file('denyhosts.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[denyhosts]',
               'require' => 'Package[denyhosts]',
-            })
+            )
           end
         end
       end
@@ -206,10 +206,10 @@ describe 'denyhosts', :type => :class do
       describe 'denyhosts::service' do
         context 'defaults' do
           it do
-            is_expected.to contain_service('denyhosts').with({
+            is_expected.to contain_service('denyhosts').with(
               'ensure' => 'running',
               'enable' => true,
-            })
+            )
           end
         end
 
@@ -219,10 +219,10 @@ describe 'denyhosts', :type => :class do
           }}
 
           it do
-            is_expected.to contain_service('denyhosts').with({
+            is_expected.to contain_service('denyhosts').with(
               'ensure' => 'stopped',
               'enable' => true,
-            })
+            )
           end
         end
       end

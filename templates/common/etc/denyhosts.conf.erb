@@ -68,7 +68,7 @@ HOSTS_DENY = /etc/hosts.deny
 #PURGE_DENY = 1w
 #
 # purge entries older than 5 days
-PURGE_DENY = <%= scope.lookupvar('::denyhosts::purge_deny') %>
+PURGE_DENY = <%= scope['::denyhosts::purge_deny'] %>
 #######################################################################
 
 #######################################################################
@@ -112,7 +112,7 @@ BLOCK_SERVICE  = sshd
 # attempts has exceeded this value.  This value applies to invalid
 # user login attempts (eg. non-existent user accounts)
 #
-DENY_THRESHOLD_INVALID = <%= scope.lookupvar('::denyhosts::deny_threshold_invalid') %>
+DENY_THRESHOLD_INVALID = <%= scope['::denyhosts::deny_threshold_invalid'] %>
 #
 #######################################################################
 
@@ -123,7 +123,7 @@ DENY_THRESHOLD_INVALID = <%= scope.lookupvar('::denyhosts::deny_threshold_invali
 # user login attempts (eg. user accounts that exist in /etc/passwd) except
 # for the "root" user
 #
-DENY_THRESHOLD_VALID = <%= scope.lookupvar('::denyhosts::deny_threshold_valid') %>
+DENY_THRESHOLD_VALID = <%= scope['::denyhosts::deny_threshold_valid'] %>
 #
 #######################################################################
 
@@ -227,7 +227,7 @@ LOCK_FILE = /run/denyhosts.pid
 # Multiple email addresses can be delimited by a comma, eg:
 # ADMIN_EMAIL = foo@bar.com, bar@foo.com, etc@foobar.com
 #
-ADMIN_EMAIL = <%= scope.lookupvar('::denyhosts::email') %>
+ADMIN_EMAIL = <%= scope['::denyhosts::email'] %>
 #
 #######################################################################
 
@@ -258,7 +258,7 @@ SMTP_PORT = 25
 # SMTP_FROM: you can specify the "From:" address in messages sent
 # from DenyHosts when it reports thwarted abuse attempts
 #
-SMTP_FROM = <%= scope.lookupvar('::denyhosts::email_from') %>
+SMTP_FROM = <%= scope['::denyhosts::email_from'] %>
 #
 #######################################################################
 
@@ -266,7 +266,7 @@ SMTP_FROM = <%= scope.lookupvar('::denyhosts::email_from') %>
 #
 # SMTP_SUBJECT: you can specify the "Subject:" of messages sent
 # by DenyHosts when it reports thwarted abuse attempts
-SMTP_SUBJECT = <%= scope.lookupvar('::denyhosts::email_subject') %>
+SMTP_SUBJECT = <%= scope['::denyhosts::email_subject'] %>
 #
 ######################################################################
 
