@@ -1,22 +1,20 @@
 require 'spec_helper'
 
 describe 'denyhosts', type: :class do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily
-      }
-    end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    it { is_expected.to compile.with_all_deps }
-    it { is_expected.to contain_anchor('denyhosts::begin') }
-    it { is_expected.to contain_class('denyhosts::params') }
-    it { is_expected.to contain_class('denyhosts::install') }
-    it { is_expected.to contain_class('denyhosts::config') }
-    it { is_expected.to contain_class('denyhosts::service') }
-    it { is_expected.to contain_anchor('denyhosts::end') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_anchor('denyhosts::begin') }
+      it { is_expected.to contain_class('denyhosts::params') }
+      it { is_expected.to contain_class('denyhosts::install') }
+      it { is_expected.to contain_class('denyhosts::config') }
+      it { is_expected.to contain_class('denyhosts::service') }
+      it { is_expected.to contain_anchor('denyhosts::end') }
 
-    context "on #{osfamily}" do
       describe 'denyhosts::install' do
         context 'defaults' do
           it do
