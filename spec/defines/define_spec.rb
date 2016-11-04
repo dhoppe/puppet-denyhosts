@@ -1,77 +1,87 @@
 require 'spec_helper'
 
-describe 'denyhosts::define', :type => :define do
+describe 'denyhosts::define', type: :define do
   ['Debian'].each do |osfamily|
-    let(:facts) {{
-      :osfamily => osfamily,
-    }}
+    let(:facts) do
+      {
+        osfamily: osfamily
+      }
+    end
     let(:pre_condition) { 'include denyhosts' }
     let(:title) { 'denyhosts.conf' }
 
     context "on #{osfamily}" do
       context 'when source file' do
-        let(:params) {{
-          :config_file_path   => '/etc/denyhosts.2nd.conf',
-          :config_file_source => 'puppet:///modules/denyhosts/common/etc/denyhosts.conf',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/denyhosts.2nd.conf',
+            config_file_source: 'puppet:///modules/denyhosts/common/etc/denyhosts.conf'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/denyhosts/common/etc/denyhosts.conf',
             'notify'  => 'Service[denyhosts]',
-            'require' => 'Package[denyhosts]',
+            'require' => 'Package[denyhosts]'
           )
         end
       end
 
       context 'when content string' do
-        let(:params) {{
-          :config_file_path   => '/etc/denyhosts.3rd.conf',
-          :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/denyhosts.3rd.conf',
+            config_file_string: '# THIS FILE IS MANAGED BY PUPPET'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
             'notify'  => 'Service[denyhosts]',
-            'require' => 'Package[denyhosts]',
+            'require' => 'Package[denyhosts]'
           )
         end
       end
 
       context 'when content template' do
-        let(:params) {{
-          :config_file_path     => '/etc/denyhosts.4th.conf',
-          :config_file_template => 'denyhosts/common/etc/denyhosts.conf.erb',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/denyhosts.4th.conf',
+            config_file_template: 'denyhosts/common/etc/denyhosts.conf.erb'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
             'notify'  => 'Service[denyhosts]',
-            'require' => 'Package[denyhosts]',
+            'require' => 'Package[denyhosts]'
           )
         end
       end
 
       context 'when content template (custom)' do
-        let(:params) {{
-          :config_file_path         => '/etc/denyhosts.5th.conf',
-          :config_file_template     => 'denyhosts/common/etc/denyhosts.conf.erb',
-          :config_file_options_hash => {
-            'key' => 'value',
-          },
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/denyhosts.5th.conf',
+            config_file_template: 'denyhosts/common/etc/denyhosts.conf.erb',
+            config_file_options_hash: {
+              'key' => 'value'
+            }
+          }
+        end
 
         it do
           is_expected.to contain_file('define_denyhosts.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
             'notify'  => 'Service[denyhosts]',
-            'require' => 'Package[denyhosts]',
+            'require' => 'Package[denyhosts]'
           )
         end
       end
