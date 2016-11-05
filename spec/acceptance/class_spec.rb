@@ -7,14 +7,14 @@ when 'Debian'
   service_name     = 'denyhosts'
 end
 
-describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'denyhosts', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'denyhosts': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'denyhosts::install' do
@@ -24,7 +24,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'denyhosts': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -40,7 +40,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -58,7 +58,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -83,7 +83,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :expect_failures => true)
+        apply_manifest(pp, expect_failures: true)
       end
 
       describe package(package_name) do
@@ -106,7 +106,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'denyhosts': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -122,7 +122,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -145,7 +145,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file('/var/lib/denyhosts/allowed-hosts') do
@@ -162,7 +162,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'denyhosts': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do
@@ -179,7 +179,7 @@ describe 'denyhosts', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do
