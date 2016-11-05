@@ -1,10 +1,11 @@
 # denyhosts
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-denyhosts.png?branch=master)](https://travis-ci.org/dhoppe/puppet-denyhosts)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-denyhosts/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-denyhosts)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/denyhosts.svg)](https://forge.puppetlabs.com/dhoppe/denyhosts)
 
 #### Table of Contents
 
