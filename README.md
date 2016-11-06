@@ -41,6 +41,7 @@ of operating systems and distributions.
 
 * Puppet >= 3.0
 * Facter >= 1.6
+* [Extlib module](https://github.com/voxpupuli/puppet-extlib)
 * [Stdlib module](https://github.com/puppetlabs/puppetlabs-stdlib)
 
 ### Beginning with denyhosts
